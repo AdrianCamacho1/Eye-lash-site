@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #d9a7b3;
+  --primary-light: #ffd1dc;
+  --primary-dark: #c29f8a;
+  --secondary: #f5e1dc;
+  --secondary-light: #f8f0f3;
+  --dark: #3c3c3c;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  @apply text-dark;
+}
+
+/* Animation delay utilities */
+.animation-delay-300 {
+  animation-delay: 300ms;
+}
+
+.animation-delay-500 {
+  animation-delay: 500ms;
+}
+
+.animation-delay-700 {
+  animation-delay: 700ms;
+}
+
+.animation-delay-1000 {
+  animation-delay: 1000ms;
+}
+
+/* Loading state for images */
+.lazy-image {
+  @apply transition-opacity duration-300 opacity-0;
+}
+
+.lazy-image.loaded {
+  @apply opacity-100;
+}
+
+/* Accessibility focus styles */
+:focus-visible {
+  @apply outline-2 outline-primary outline-offset-2;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-secondary-light;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary-dark;
+}
+
+/* Make images responsive by default */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Container for page sections */
+.container {
+  @apply px-4 mx-auto;
+  max-width: 1280px;
+}
+
+@media (min-width: 640px) {
+  .container {
+    @apply px-6;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    @apply px-8;
+  }
+}
+
+/* Button styles */
+.btn {
+  @apply px-6 py-2 rounded-full transition-colors text-center inline-block;
+}
+
+.btn-primary {
+  @apply bg-primary text-white hover:bg-primary-light;
+}
+
+.btn-outline {
+  @apply border-2 border-primary text-primary hover:bg-primary hover:text-white;
+}
